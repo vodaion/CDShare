@@ -1,6 +1,6 @@
 # CDShare
 
-[![CI Status](https://img.shields.io/travis/vadeara/CDShare.svg?style=flat)](https://travis-ci.org/vodaion/CDShare)
+[![CI Status](https://img.shields.io/travis/vadeara/CDShare.svg?style=flat)](https://travis-ci.org/vadeara/CDShare)
 [![Version](https://img.shields.io/cocoapods/v/CDShare.svg?style=flat)](https://cocoapods.org/pods/CDShare)
 [![License](https://img.shields.io/cocoapods/l/CDShare.svg?style=flat)](https://cocoapods.org/pods/CDShare)
 [![Platform](https://img.shields.io/cocoapods/p/CDShare.svg?style=flat)](https://cocoapods.org/pods/CDShare)
