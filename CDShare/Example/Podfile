@@ -2,7 +2,7 @@ use_frameworks!
 platform :ios, '11.0'
 
 target 'CDShare_Example' do
-  pod 'CDShare
+  pod 'CDShare'
 
   target 'CDShare_Tests' do
     inherit! :search_paths
