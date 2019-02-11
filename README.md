@@ -85,8 +85,15 @@ they do not access each other's directories, but they have access to the Shared 
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/ProcessState.png)</span>
 
 # CDShare Logic #
-We will create a folder in the Shared Container where we will save `SQLite` and we will have one folder for each application, the folder name will be the bundle ID of each application. In these folders, we will save files with a unique name in which they will contain the payload received in the notification with the name `CoreDataSaveNotification`.
+We will create a folder in the Shared Container where we will save `SQLite` and we will have one folder for each application, the folder name will be the bundle ID of each application. In these folders, we will save files with a unique name in which they will contain the payload received in the notification with the name `.CoreDataSaveNotification`.
+
 # Framework structure #
+`FolderWatcher` is one of the key components in the `CDShare.framework`.
+For each application, we will have a `FolderWatcher` for the `readingEndpoint` that will receive events from each time we will write some in that folder.
+For each event will we will process all the files that we did write in that folder.
+For each application, we will handle CoreData notification `.CoreDataSaveNotification`, 
+if notification contain any change of the models that we are interest in `.sharedInScopeEntityNames` then,
+ that notification will be saved in the `writing` folders and that write will generate a reading event in each other application. After reading and merging in the applications the new changes the files are deleted.
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/FrameworkState.png)</span>
 
 
