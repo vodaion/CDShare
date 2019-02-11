@@ -5,7 +5,7 @@
 osx_image: xcode10.1
 language: swift
 cache: cocoapods
-podfile: ./CDShare/Example/Podfile
+# podfile: ./CDShare/Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=./CDShare/Example
