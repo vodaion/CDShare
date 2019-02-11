@@ -89,11 +89,12 @@ We will create a folder in the Shared Container where we will save `SQLite` and 
 
 # Framework structure #
 `FolderWatcher` is one of the key components in the `CDShare.framework`.
-For each application, we will have a `FolderWatcher` for the `readingEndpoint` that will receive events from each time we will write some in that folder.
+For each application, we will have a `FolderWatcher`, the `readingEndpoint` we will receive events from each application each time one of the application will write anything in that folder.
 For each event will we will process all the files that we did write in that folder.
 For each application, we will handle CoreData notification `.CoreDataSaveNotification`, 
-if notification contain any change of the models that we are interest in `.sharedInScopeEntityNames` then,
- that notification will be saved in the `writing` folders and that write will generate a reading event in each other application. After reading and merging in the applications the new changes the files are deleted.
+if notification contain any changes of the models that we are interest with `.sharedInScopeEntityNames` then,
+that notification will be saved in the `writing` folders as a file with a unique name, The writing event will fire a reading event in each other applications.
+After reading and merging in the applications the new changes the files are deleted.
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/FrameworkState.png)</span>
 
 
