@@ -27,7 +27,7 @@ pod 'CDShare'
 This work was inspired by how Apple iWork office suite applications work in iOS and a specific feature of how the documents are sharing between apps even in offline mode.
 
 ### `CDShare` will answer the question: <br> How do we share CoreData between `2*n` application, where n >= 1? ###
-Before we will direct to the subject, let have a short introduction for each part that we will touch in this tutorial.
+Before we will go direct to the subject, we will have a short introduction for each part that we will touch in this tutorial.
 
 # What is CoreData? #
 CoreData is a framework created by Apple, is used for object layer modeling management.
