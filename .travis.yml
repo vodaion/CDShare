@@ -11,6 +11,6 @@ language: swift
 # - pod install --project-directory=./CDShare/Example
 script:
 - gem install cocoapods # Since Travis is not always on latest version
-- pod install --project-directory=./CDShare/Example
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace CDShare/Example/CDShare.xcworkspace -scheme CDShare_Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO
+- pod install --project-directory=./Example
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/CDShare.xcworkspace -scheme CDShare_Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO
 - pod lib lint --allow-warnings
