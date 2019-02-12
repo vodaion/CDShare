@@ -56,7 +56,7 @@ Normally you do not have access to the other applications directory structure, o
 # Application directory structure without iCloud: #
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/AppStructure1.png)</span>
 
-# AppGroup #
+# App Group #
 
 You do have the support of accessing and communicate between applications if the applications are in the same App Group.
 
@@ -92,7 +92,7 @@ In the Xcode for the each target enable <i>App Groups</i> in target settings.
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/13.png)
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/14.png)
 
-And please, perform this procedure for all applications or extensions of the group. 
+And please, perform this procedure for all applications or extensions of the App Group. 
 
 # CDShare Logic #
 A folder will be created in the Shared Container, in that folder the `SQLite` files will be saved and for each application will be created a sub-folder, the sub-folder name will be the bundle ID of each application. 
