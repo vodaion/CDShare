@@ -57,9 +57,15 @@ Normally you do not have access to the other applications directory structure, o
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/AppStructure1.png)</span>
 
 # AppGroup #
-You do have the support of accessing and communicate between applications if the applications are in the same AppGroup.
 
-First of all, you need to create app groups for your application. Go to <a href="https://developer.apple.com/membercenter/">Apple Developer Member Center</a> and register app group. Fill the description and identifier and follow the instructions.
+You do have the support of accessing and communicate between applications if the applications are in the same App Group.
+
+Each application when is running in a separate process, even if the applications are part of the same App Group, 
+they do not access each other's directories, but they have access to the Shared Container that has a Sandbox-like directory structure.
+# Process structure between Applications #
+ <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/ProcessState.png)</span>
+
+First of all, you need to create App Group for your application. Go to <a href="https://developer.apple.com/membercenter/">Apple Developer Member Center</a> and register App Group. Fill the description and identifier and follow the instructions.
 
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/1.png)
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/2.png)
@@ -87,11 +93,6 @@ In the Xcode for the each target enable <i>App Groups</i> in target settings.
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/14.png)
 
 And please, perform this procedure for all applications or extensions of the group. 
-
-Each application when is running in a separate process, even if the applications are part of the same group, 
-they do not access each other's directories, but they have access to the Shared Container that has a Sandbox-like directory structure.
-# Process structure between Applications #
- <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/ProcessState.png)</span>
 
 # CDShare Logic #
 A folder will be created in the Shared Container, in that folder the `SQLite` files will be saved and for each application will be created a sub-folder, the sub-folder name will be the bundle ID of each application. 
