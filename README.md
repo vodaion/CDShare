@@ -27,7 +27,7 @@ pod 'CDShare'
 This work was inspired by how Apple iWork office suite applications work in iOS and a specific feature of how the documents are sharing between apps even in offline mode.
 
 ### `CDShare` will answer the question: <br> How do we share CoreData between `2*n` application, where n >= 1? ###
-Before we will go direct to the subject, we will have a short introduction for each part that we will touch in this tutorial.
+Before to go direct to the subject, let's have a short introduction for each part that is touched in this tutorial.
 
 # What is CoreData? #
 CoreData is a framework created by Apple, is used for object layer modeling management.
@@ -45,16 +45,20 @@ NSManagedObject
 # iOS Application structure: #
 In order to share CoreData between `2*n` applications, we have some impediments.
 
-The main problem in iOS is that each application is totally isolated from other applications through a Sandbox.
-This limits are interprocess communication and accessing directories/files between applications, normally we do not have access to applications in the directory structure.
-# Directory structure of an application: #
-Application directory structure with iCloud:
+In iOS, each application is totally isolated from other applications through a Sandbox.
+This was intentionally done by Apple for security reasons.
+The limits are interprocess communication and accessing directories/files between applications.
+Normally you do not have access to the other applications directory structure, outside of the application running process.
+
+# Application directory structure with iCloud: #
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/AppStructure2.png)</span>
 
-Application directory structure without iCloud:
+# Application directory structure without iCloud: #
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/AppStructure1.png)</span>
 
 # AppGroup #
+You do have the support of accessing and communicate between applications if the applications are in the same AppGroup.
+
 First of all, you need to create app groups for your application. Go to <a href="https://developer.apple.com/membercenter/">Apple Developer Member Center</a> and register app group. Fill the description and identifier and follow the instructions.
 
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/1.png)
@@ -72,22 +76,27 @@ Then go to the application or the extension and edit services. It’s really sim
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/7.png)
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/8.png)
 ![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/9.png)
+![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/10.png)
+![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/11.png)
+![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/12.png)
 
-And please, perform this procedure for all extensions of the group. It’s all settings, now open the Xcode and let’s go to write code.
-
+It’s all settings, now open the Xcode and let’s go to write code.
 In the Xcode for the each target enable <i>App Groups</i> in target settings.
 
-We have support for access and communication between applications, it needs to belong to the same group.
+![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/13.png)
+![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/14.png)
 
-Each application when running is a separate process, and even if the applications are part of the same group, 
+And please, perform this procedure for all applications or extensions of the group. 
+
+Each application when is running in a separate process, even if the applications are part of the same group, 
 they do not access each other's directories, but they have access to the Shared Container that has a Sandbox-like directory structure.
 # Process structure between Applications #
  <span style="display:block;text-align:center">![alt tag](https://github.com/vadeara/CDShare/blob/master/screenshots/ProcessState.png)</span>
 
 # CDShare Logic #
-We will create a folder in the Shared Container where we will save `SQLite` and we will have one folder for each application, the folder name will be the bundle ID of each application. In these folders, we will save files with a unique name in which they will contain the payload received in the notification with the name `.CoreDataSaveNotification`.
+A folder will be created in the Shared Container, in that folder the `SQLite` files will be saved and for each application will be created a sub-folder, the sub-folder name will be the bundle ID of each application. 
+In these folders, we will save files with a unique name in which they will contain the payload received in the notification with the name `.CoreDataSaveNotification`.
 
-# Framework structure #
 `FolderWatcher` is one of the key components in the `CDShare.framework`.
 For each application, we will have a `FolderWatcher`, the `readingEndpoint` we will receive events from each application each time one of the application will write anything in that folder.
 For each event will we will process all the files that we did write in that folder.
