@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CDShare'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of CDShare.'
+  s.version          = '0.1.1'
+  s.summary          = 'CDShare, is a framework for sharing CoreData between applications in IOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  `CDShare` will answer the question: <br> How do we share CoreData between `2*n` application, where n >= 1?
                        DESC
 
   s.homepage         = 'https://github.com/vadeara/CDShare'
