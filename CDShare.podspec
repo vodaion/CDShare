@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CDShare'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'CDShare, is a framework for sharing CoreData between applications in IOS.'
 
 # This description is used to generate tags and improve search results.
@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/vadeara/CDShare'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'vodaion' => 'vanea.voda@gmail.com' }
+  s.social_media_url = "http://twitter.com/vodaion"
   s.source           = { :git => 'https://github.com/vadeara/CDShare.git', :tag => s.version.to_s }
   s.swift_version = '4.2'
   s.ios.deployment_target = '11.0'
