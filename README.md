@@ -12,7 +12,6 @@ This work was inspired by how Apple iWork office suite applications work in iOS 
 Before to go direct to the subject, let's have a short introduction for each part that is touched in this tutorial.
 
 More details check ![wiki:](https://github.com/vadeara/CDShare/wiki)
-# Example description #
 
 ## Setup
 
