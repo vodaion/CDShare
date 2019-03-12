@@ -11,7 +11,9 @@ This work was inspired by how Apple iWork office suite applications work in iOS 
 ### `CDShare` will answer the question: <br> How do we share CoreData between `2*n` application, where n >= 1? ###
 Before to go direct to the subject, let's have a short introduction for each part that is touched in this tutorial.
 
-More details check ![wiki:](https://github.com/vadeara/CDShare/wiki)
+### See the Wiki!
+
+The github wiki contains documentation, samples, contributions, etc. Start there ![wiki:](https://github.com/vadeara/CDShare/wiki)
 
 ## Setup
 
