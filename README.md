@@ -13,7 +13,7 @@ Before to go direct to the subject, let's have a short introduction for each par
 
 ### See the Wiki!
 
-The ![github wiki:](https://github.com/vadeara/CDShare/wiki) contains documentation, samples, contributions, etc. Start there.
+The ![github wiki](https://github.com/vadeara/CDShare/wiki) contains documentation, samples, contributions, etc. Start there.
 
 ## Setup
 
